@@ -1,0 +1,6 @@
+{
+  "name": "Helios Global Exports",
+  "description": "Manufacturer and exporter of premium Low-EC (Washed) and High-EC (Unwashed) Coco Peat 5kg blocks sourced directly from Pollachi, Coimbatore, Tamil Nadu, India.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
