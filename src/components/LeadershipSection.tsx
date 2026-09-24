@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Users, ShieldCheck } from 'lucide-react';
+import { Users } from 'lucide-react';
 import { INITIAL_DIRECTORS } from '../data/companyData';
 import { Director } from '../types';
 
@@ -40,7 +40,7 @@ export const LeadershipSection: React.FC<LeadershipSectionProps> = ({
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6">
           {directors.map((director) => {
             const hasImgError = imageErrors[director.id];
-            const imgSrc = director.customImageUrl || `/${director.imageFileName}`;
+            const imgSrc = director.customImageUrl || `${import.meta.env.BASE_URL}${director.imageFileName}`;
 
             return (
               <div
@@ -64,9 +64,6 @@ export const LeadershipSection: React.FC<LeadershipSectionProps> = ({
                       <span className="text-xs font-bold uppercase tracking-wider text-amber-400">
                         Director {director.code}
                       </span>
-                      <span className="text-[10px] text-stone-400 mt-1">
-                        /{director.imageFileName}
-                      </span>
                     </div>
                   )}
 
@@ -88,20 +85,6 @@ export const LeadershipSection: React.FC<LeadershipSectionProps> = ({
               </div>
             );
           })}
-        </div>
-
-        {/* Informational Footer Note on Director Photos */}
-        <div className="mt-12 bg-white rounded-2xl border border-stone-200 p-5 flex flex-wrap items-center justify-between gap-4 shadow-2xs">
-          <div className="flex items-start gap-3 max-w-2xl">
-            <ShieldCheck className="w-5 h-5 text-amber-700 shrink-0 mt-0.5" />
-            <div className="text-xs text-stone-600 leading-relaxed">
-              <strong className="text-stone-900 font-bold">Director Photos:</strong> Place your director portrait image files as <code className="text-amber-900 font-mono bg-stone-100 px-1 py-0.5 rounded">/director_a.jpg</code>, <code className="text-amber-900 font-mono bg-stone-100 px-1 py-0.5 rounded">/director_b.jpg</code>, <code className="text-amber-900 font-mono bg-stone-100 px-1 py-0.5 rounded">/director_c.jpg</code>, <code className="text-amber-900 font-mono bg-stone-100 px-1 py-0.5 rounded">/director_d.jpg</code>, and <code className="text-amber-900 font-mono bg-stone-100 px-1 py-0.5 rounded">/director_e.jpg</code> in the public/root directory.
-            </div>
-          </div>
-          
-          <div className="text-xs font-semibold text-amber-900 bg-amber-50 px-3 py-1.5 rounded-lg border border-amber-200">
-            Helios Global Exports Executive Board
-          </div>
         </div>
 
       </div>
